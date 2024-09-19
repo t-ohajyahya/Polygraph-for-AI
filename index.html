@@ -42,8 +42,9 @@
             .then(response => response.json())
             .then(data => {
                 // Display the response from Custom Vision
-                console.log(data["predictions"][0])
-                document.getElementById('apiResponse').innerText = JSON.stringify(data, null, 2);
+                console.log(data)
+                const higherProbability = data["predictions"][0]["probability"]
+                document.getElementById('apiResponse').innerText = `${higherProbability}`
             })
             .catch(error => {
                 // Display error message if something goes wrong
