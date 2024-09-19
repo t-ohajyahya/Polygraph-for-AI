@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image to Custom Vision</title>
+</head>
+<body>
+<h1>Upload an Image for Prediction</h1>
+
+<!-- File Input to Browse Image -->
+<input type="file" id="imageInput" accept="image/*">
+<button id="uploadButton">Polygraph Check</button>
+
+<!-- Display the API Response -->
+<div id="apiResponse"></div>
+
+<script>
+    document.getElementById('uploadButton').addEventListener('click', () => {
+        const input = document.getElementById('imageInput');
+        if (input.files.length === 0) {
+            alert("Please select an image");
+            return;
+        }
+
+        const file = input.files[0];
+
+        // Create a FormData object to hold the image file
+        const formData = new FormData();
+        formData.append('imageData', file);
+
+        // Replace these placeholders with your Custom Vision details
+        const predictionEndpoint = 'https://polygraphaimodel-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/ce06add1-915d-4544-bf9e-b53dbb56c815/classify/iterations/Iteration2/image';
+        const predictionKey = 'ed1441ab92bb4acbbeda400bd86fdeda';
+
+        // Send the image to the Custom Vision Prediction API
+        fetch(predictionEndpoint, {
+            method: 'POST',
+            headers: {
+                'Prediction-Key': predictionKey,
+                'Content-Type': 'application/octet-stream' // Custom Vision API accepts image files
+            },
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Display the response from Custom Vision
+                document.getElementById('apiResponse').innerText = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                // Display error message if something goes wrong
+                document.getElementById('apiResponse').innerText = 'Error: ' + error;
+            });
+    });
+</script>
+</body>
+</html>
