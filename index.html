@@ -38,7 +38,7 @@
             method: 'POST',
             headers: {
                 'Prediction-Key': predictionKey,
-                'Content-Type': 'image/png' // Custom Vision API accepts image files
+                'Content-Type': 'multipart/form-data' // Custom Vision API accepts image files
             },
             body: formData
         })
