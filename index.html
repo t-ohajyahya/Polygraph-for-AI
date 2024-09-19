@@ -42,7 +42,7 @@
             .then(response => response.json())
             .then(data => {
                 // Display the response from Custom Vision
-                console.log(data)
+                console.log(data["predictions"][0])
                 document.getElementById('apiResponse').innerText = JSON.stringify(data, null, 2);
             })
             .catch(error => {
