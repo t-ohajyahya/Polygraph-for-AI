@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polygraph AI</title>
+    <link rel="stylesheet" href="./css/globals.css">
+    <link rel="stylesheet" href="./css/inspect.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="nav-container">
+            <div id="homeBtn" class="nav-item-unselected">
+                <svg style="fill:currentColor;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.4508 2.53318C12.6128 1.82618 11.3872 1.82618 10.5492 2.53318L3.79916 8.22772C3.29241 8.65523 3 9.28447 3 9.94747V19.2526C3 20.2191 3.7835 21.0026 4.75 21.0026H7.75C8.7165 21.0026 9.5 20.2191 9.5 19.2526V15.25C9.5 14.5707 10.0418 14.018 10.7169 14.0004H13.2831C13.9582 14.018 14.5 14.5707 14.5 15.25V19.2526C14.5 20.2191 15.2835 21.0026 16.25 21.0026H19.25C20.2165 21.0026 21 20.2191 21 19.2526V9.94747C21 9.28447 20.7076 8.65523 20.2008 8.22772L13.4508 2.53318Z" fill="#212121" />
+                </svg>
+                <h1 class="nav-item-text">Home</h1>
+            </div>
+            <div id="inspectBtn" class="nav-item-selected">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#5559ce;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#9559fc;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path style="fill: url(#gradient)" d="M3 6.5C3 4.567 4.567 3 6.5 3H9C9.55228 3 10 3.44772 10 4C10 4.55228 9.55228 5 9 5H6.5C5.67157 5 5 5.67157 5 6.5V9C5 9.55229 4.55228 10 4 10C3.44772 10 3 9.55229 3 9V6.5ZM21 17.5C21 19.433 19.433 21 17.5 21H15C14.4477 21 14 20.5523 14 20C14 19.4477 14.4477 19 15 19L17.5 19C18.3284 19 19 18.3284 19 17.5V15C19 14.4477 19.4477 14 20 14C20.5523 14 21 14.4477 21 15V17.5ZM21 6.5C21 4.567 19.433 3 17.5 3H15C14.4477 3 14 3.44772 14 4C14 4.55228 14.4477 5 15 5H17.5C18.3284 5 19 5.67157 19 6.5V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55229 21 9V6.5ZM6.5 21C4.567 21 3 19.433 3 17.5V15C3 14.4477 3.44772 14 4 14C4.55229 14 5 14.4477 5 15L5 17.5C5 18.3284 5.67157 19 6.5 19H9C9.55229 19 10 19.4477 10 20C10 20.5523 9.55228 21 9 21H6.5ZM12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15ZM7.5 8.75C8.19036 8.75 8.75 8.19036 8.75 7.5C8.75 6.80964 8.19036 6.25 7.5 6.25C6.80964 6.25 6.25 6.80964 6.25 7.5C6.25 8.19036 6.80964 8.75 7.5 8.75Z" fill="#212121" />
+                </svg>
+                <h1 class="nav-item-text">Inspect</h1>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="header-bar">
+                <h3 class="header-bar-text">Combating synthetic misinformation with AI</h3>
+            </div>
+            <div style="width: 100%; height: 100px;"></div>
+            <div class="body-content">
+                <div class="img-upload-side">
+                    <div id="dropContainer" class="img-upload-container">
+                        <span class="drop-title">Drop files here</span>
+                        <h1 class="or"> or</h1>
+                        <input type="file" id="imageInput" accept="image/*" class="img-upload-input">
+                        <div class="analyze-container">
+                            <button class="analyze-btn" id="analyzeBtn">Analyze Image  >></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="details-side">
+                    <div>
+                        <h1 class="result-static-text hidden" id="staticResult"></h1>
+                        <h1 class="result-percentage hidden" id="resultPrcnt"></h1>
+                        <h1 class="result-text hidden" id="result"></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/navbar.js"></script>
+    <script src="./js/request.js"></script>
+    <script src="./js/drop.js"></script>
+</body>
+</html>
