@@ -3,5 +3,5 @@ document.getElementById('inspectBtn').onclick = function() {
 };
 
 document.getElementById('homeBtn').onclick = function() {
-    window.location.href = '../home.html';
+    window.location.href = '../index.html';
 };
