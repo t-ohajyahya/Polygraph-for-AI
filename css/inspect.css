@@ -255,4 +255,23 @@ body{
     opacity: 0;
 }
 
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    border-radius: 10px;
+    background-color: #efecfea4;
+}
 
+@keyframes brightening {
+    0% { opacity: 0 }
+    50% { opacity: 0.7; }
+    100% { opacity: 0; }
+}
+
+.brightening {
+    animation: brightening 1s ease-in-out infinite;
+}

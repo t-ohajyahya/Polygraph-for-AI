@@ -70,11 +70,17 @@ document.getElementById("analyzeBtn").onclick = async () => {
         return;
     }
 
+    const overlay = document.getElementById('overlay');
+    
+    // Add the brightening class to the image
+    overlay.classList.add("brightening")
+
     const file = input.files[0];
     const response = await checkImageRealism(file);
     console.log(response)
     if (!response.success){
         alert("Something went wrong :(")
+        overlay.classList.remove("brightening")
         return
     }
 
@@ -82,5 +88,21 @@ document.getElementById("analyzeBtn").onclick = async () => {
     document.getElementById("staticResult").classList.remove("hidden")
     updatePercentageMain(response.probability)
     updateResultText(response.type)
+    overlay.classList.remove("brightening")
     return
 }
+
+document.getElementById('imageInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            const img = document.getElementById('uploadedImage');
+            img.src = e.target.result; // Set the src to the image data
+            img.style.display = 'block'; // Show the image
+        };
+
+        reader.readAsDataURL(file); // Read the file as a Data URL
+    }
+});

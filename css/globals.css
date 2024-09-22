@@ -49,37 +49,25 @@ Semilight to an appropriate font-weight.
 @font-face {
     font-family: "Segoe UI";
     font-weight: 200;
-    src: local("Segoe UI Light");
+    src: url("../assets/fonts/segoeuil.ttf")
 }
 @font-face {
     font-family: "Segoe UI";
     font-weight: 300;
-    src: local("Segoe UI Semilight");
+    src: url("../assets/fonts/segoeuisl.ttf")
 }
 @font-face {
     font-family: "Segoe UI";
     font-weight: 400;
-    src: local("Segoe UI");
+    src: url("../assets/fonts/segoeui.ttf")
 }
 @font-face {
     font-family: "Segoe UI";
     font-weight: 600;
-    src: local("Segoe UI Semibold");
+    src: url("../assets/fonts/segoeuibl.ttf")
 }
 @font-face {
     font-family: "Segoe UI";
     font-weight: 700;
-    src: local("Segoe UI Bold");
-}
-@font-face {
-    font-family: "Segoe UI";
-    font-style: italic;
-    font-weight: 400;
-    src: local("Segoe UI Italic");
-}
-@font-face {
-    font-family: "Segoe UI";
-    font-style: italic;
-    font-weight: 700;
-    src: local("Segoe UI Bold Italic");
+    src: url("../assets/fonts/segoeuib.ttf")
 }
